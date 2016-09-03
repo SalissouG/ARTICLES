@@ -1,0 +1,74 @@
+<html ng-app="myApp">
+ <head>
+<script type="text/javascript">
+      function RedirectionJavascript(){
+       console.log('here');       
+      }
+</script>
+    <title>List of pictures</title>
+    <link rel="stylesheet" href="bower_components/bootstrap-css/css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+    <link href="/style.css" rel ="stylesheet"/> 
+    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+ </head>
+
+
+<body style="background:#F5DEB3 overflow-x:hidden;overflow-y:visible;height:500px;"  ng-controller="MainCtrl"  >
+
+<div class="row" style="background:#006400">
+<div class="col-lg-1"></div>
+<div class="col-lg-1" style="color:white"><h3>UPLOADER</h3></div>
+<div class="col-lg-6"></div>
+<div class="col-lg-4"><img src="/uploads/nfc.png "   class="nfc"></div>
+
+</div>
+
+<table style="width:100%">
+<tr >
+ <td >
+
+
+    <div id="mainwrapper"  >
+    <div id="box-1" class="box">
+        <img id="image-1" src="/uploads/<%= images[0].name %> ">
+        <span class="caption simple-caption">
+        <p><%= images[0].message%></p>
+        </span>
+    </div>
+ 
+
+    </td>
+
+
+
+    <td > 
+
+          <div id="mainwrapper" >
+    <div id="box-1" class="box">
+        <img id="image-1" src="/uploads/<%= images[1].name %>  " >
+        <span class="caption simple-caption">
+        <p><%= images[1].message%></p>
+        </span>
+    </div>
+      </td>
+
+       <td > 
+
+            <div id="mainwrapper" >
+    <div id="box-1" class="box">
+        <img id="image-1" src="/uploads/<%= images[2].name %> " >
+        <span class="caption simple-caption">
+        <p><%= images[2].message%></p>
+        </span>
+    </div>
+         </td>
+
+   </tr>
+
+
+</table>
+
+ </body>
+  <script src="bower_components/angular/angular.min.js" charset="utf-8"></script>
+  <script src="scripts/app.js" charset="utf-8"></script>
+</html>
