@@ -23,7 +23,7 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage });
 
 var app=express();
-var port=6000;
+var port=3005;
 
 
 app.use(bodyParser.json());
@@ -45,12 +45,8 @@ app.use(function(req, res, next) {
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-app.get('/testUpload',function(req,res){
+app.get('/up',function(req,res){
       res.render("up.ejs");
-});
-app.get('/testAngular',function(req,res){
-
-      res.render("ang.ejs");
 });
 
 
@@ -62,57 +58,38 @@ app.get('/download', function(req, res){
 
 
 
-app.get('/images',function(req,res){
-
+app.get('/im',function(req,res){
+  
 MapImage.find(function(err ,mapImages){
 if(err)
 {
 console.log(err);
 }
 else{
-
-var images = new Array();
-
-for(var i=mapImages.length, j=0; j<=10; i--, j++)
-{
-images[j]=mapImages[i];
+res.render("page.ejs",{images:mapImages});
 }
-var tab= { im0:images[1], im1:images[2], im2:images[3],im3:images[4], im4:images[5], im5:images[6],im6:images[7], im7:images[8], im8:images[9]};
 
-
-res.send(tab);
-
-
-
-}
 });
 
 });
 
 
-app.get('/admin',function(req,res){
-
+app.get('/',function(req,res){
+  
   MapImage.find({},function(err ,mapImages){
   if(err)
   {
     console.log(err);
   }
   else{
-var images = new Array();
-
-for(var i=mapImages.length, j=0; j<=10; i--, j++)
-{
-images[j]=mapImages[i];
-}
-
-         res.render("page.ejs",{images:images});
+       res.render("admin.ejs",{images:mapImages});
       }
    });
 
 });
 
 app.get('/suppression/:id',function(req,res){
-
+  
 MapImage.remove({_id: req.params.id},function(err ,mapImages){
 if(err)
 {
@@ -185,7 +162,7 @@ res.send(mapImages);
 }
 }).limit(30);
 
-});
+});	
 
 
 
@@ -193,8 +170,8 @@ res.send(mapImages);
 
 app.post('/upload',upload.single('file'),function(req,res){
 
-var message ="req.body.message.substring(0,56)";
-var mapImage= new MapImage({ name:req.file.filename, message: message});
+var message =req.body.message;
+var mapImage= new MapImage({ name:req.file.filename, message: message}); 
 mapImage.save(function(err,mapImage){
 if(err)
 {
