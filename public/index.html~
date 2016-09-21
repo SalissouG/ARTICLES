@@ -1,0 +1,139 @@
+<html ng-app="myApp">
+ <head>
+
+    <title>List of pictures</title>
+    <link rel="stylesheet" href="bower_components/bootstrap-css/css/bootstrap.min.css" media="screen" title="no title" charset="utf-8" >
+    <link href="/style.css" rel ="stylesheet"/> 
+    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+ </head>
+
+
+<body style="background:#F5DEB3 overflow-x:hidden;overflow-y:visible;height:500px;"  ng-controller="MainCtrl"  >
+
+<div class="row" style="background:white">
+<div class="col-lg-1"></div>
+<div class="col-lg-1" style="color:white"><h3>ARTICLES</h3></div>
+<div class="col-lg-6"></div>
+<div class="col-lg-4"><img src="/uploads/nfc.png "   class="nfc"---></div>
+
+</div>
+
+<table style="width:100%">
+<tr >
+ <td >
+
+
+    <div id="mainwrapper"  >
+    <div id="box-1" class="box">
+        <img id="image-1" src="/uploads/{{images.im0.name}}  ">
+        <span class="caption simple-caption">
+        <p>{{images.im0.message}}</p>
+        </span>
+    </div>
+ 
+
+    </td>
+
+
+
+    <td > 
+
+          <div id="mainwrapper" >
+    <div id="box-1" class="box">
+        <img id="image-1" src="/uploads/{{images.im1.name}}  " >
+        <span class="caption simple-caption">
+        <p>{{images.im1.message}}</p>
+        </span>
+    </div>
+      </td>
+
+       <td > 
+
+            <div id="mainwrapper" >
+    <div id="box-1" class="box">
+        <img id="image-1" src="/uploads/{{images.im2.name}}  " >
+        <span class="caption simple-caption">
+        <p>{{images.im2.message}}</p>
+        </span>
+    </div>
+         </td>
+
+   </tr>
+<tr>
+ <td >
+
+          <div id="mainwrapper" >
+    <div id="box-1" class="box">
+        <img id="image-1" src="/uploads/{{images.im3.name}}  " >
+        <span class="caption simple-caption">
+        <p>{{images.im3.message}}</p>
+        </span>
+    </div>
+    </td>
+
+    <td > 
+
+           <div id="mainwrapper" >
+    <div id="box-1" class="box">
+        <img id="image-1" src="/uploads/{{images.im4.name}}  " >
+        <span class="caption simple-caption">
+        <p>{{images.im4.message}}</p>
+        </span>
+    </div>
+      </td>
+
+       <td > 
+
+            <div id="mainwrapper" >
+    <div id="box-1" class="box">
+        <img id="image-1" src="/uploads/{{images.im5.name}}  " >
+        <span class="caption simple-caption">
+        <p>{{images.im5.message}}</p>
+        </span>
+    </div>  
+         </td>
+
+   </tr>
+<tr>
+ <td>
+
+         <div id="mainwrapper" >
+    <div id="box-1" class="box">
+        <img id="image-1" src="/uploads/{{images.im6.name}}  " >
+        <span class="caption simple-caption">
+        <p>{{images.im6.message}}</p>
+        </span>
+    </div> 
+    </td>
+
+    <td > 
+
+           <div id="mainwrapper" >
+    <div id="box-1" class="box">
+        <img id="image-1" src="/uploads/{{images.im7.name}}  " >
+        <span class="caption simple-caption">
+        <p>{{images.im7.message}}</p>
+        </span>
+    </div>   
+      </td>
+
+       <td > 
+
+           <div id="mainwrapper" >
+    <div id="box-1" class="box">
+        <img id="image-1" src="/uploads/{{images.im8.name}}  " >
+        <span class="caption simple-caption">
+        <p>{{images.im8.message}}</p>
+        </span>
+    </div>  
+         </td>
+
+   </tr>
+
+</table>
+
+ </body>
+  <script src="bower_components/angular/angular.min.js" charset="utf-8"></script>
+  <script src="scripts/app.js" charset="utf-8"></script>
+</html>
