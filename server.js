@@ -82,7 +82,7 @@ app.get('/',function(req,res){
     console.log(err);
   }
   else{
-       res.render("admin.ejs",{images:mapImages});
+       res.render("accueil.ejs",{images:mapImages});
       }
    });
 

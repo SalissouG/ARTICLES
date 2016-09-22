@@ -12,75 +12,62 @@ width:90%;
 padding:10px
 }
 
-.nfc
+
+.circle{
+    margin:13px;
+    width:130px;
+    background:#6B1113;
+    height:130px;
+    text-align:center;
+    border-radius:130px;
+    <strong>line-height: 115px; /* 100 - 10 */</strong>
+}
+
+
+.circleSuccess{
+    margin-left:65px;
+    width:130px;
+    border: 2px solid  green;
+    height:130px;
+    text-align:center;
+    border-radius:130px;
+    <strong>line-height: 115px; /* 100 - 10 */</strong>
+}
+
+.circleError{
+    margin-left:65px;
+    width:130px;
+    border: 2px solid  red;
+    height:130px;
+    text-align:center;
+    border-radius:130px;
+    <strong>line-height: 115px; /* 100 - 10 */</strong>
+}
+
+.circleSmall{
+    margin:6px;
+    width:75px;
+   /* background:#6B1113;*/
+    background:white;
+    height:75px;
+    text-align:center;
+    border-radius:75px;
+    <strong>line-height: 70px; /* 100 - 10 */</strong>
+}
+
+.marge 
 {
-padding:1px;
-width:50%;
-}
-td
-{
-width:380px;
-}
-
-#mainwrapper {
-  font: 10pt normal Arial, sans-serif;
-  
-  text-align: center;
-  width: 100%;
-}
-
-#mainwrapper .box {
-    border: 2px solid #fff;
-    cursor: pointer;
-    width:100%;
-    height:400px;
-     
-   position: relative;
-    overflow: hidden;
-    
-    -webkit-box-shadow: 1px 1px 1px 1px #ccc;
-    -moz-box-shadow: 1px 1px 1px 1px #ccc;
-    box-shadow: 1px 1px 1px 1px #ccc;
-}
- 
-#mainwrapper .box img {
-    position: absolute;
-    left: 0;
-width:100%;
-    -webkit-transition: all 300ms ease-out;
-    -moz-transition: all 300ms ease-out;
-    -o-transition: all 300ms ease-out;
-    -ms-transition: all 300ms ease-out;
-    transition: all 300ms ease-out;
-}
-
-#mainwrapper .box .simple-caption {
-    height: 30px;
-    width:100%;
-    display: block;
-    bottom: -30px;
-    line-height: 25pt;
-    text-align: center;
-}
-
-#mainwrapper .box .caption {
-    background-color: rgba(0,0,0,0.8);
-    position: absolute;
-    color: #fff;
-    z-index: 100;
-    -webkit-transition: all 300ms ease-out;
-    -moz-transition: all 300ms ease-out;
-    -o-transition: all 300ms ease-out;
-    -ms-transition: all 300ms ease-out;
-    transition: all 300ms ease-out;
-    left: 0;
+margin-bottom:2px;
 }
 
 
-
-#mainwrapper .box:hover .simple-caption {
-    -moz-transform: translateY(-100%);
-    -o-transform: translateY(-100%);
-    -webkit-transform: translateY(-100%);
-    transform: translateY(-100%);
+#menu {
+  position: fixed;
+  left: 0;
+  top: 40%;
+  width: 8em;
+  margin-top: -2.5em;
+background:white;
 }
+
+
