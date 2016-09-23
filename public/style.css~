@@ -1,0 +1,73 @@
+
+.imgRect
+{
+border:none;
+padding:6px 0 6px 0;
+border-radius:2px;
+box-shadow:3px 3px 12px #999;
+background:#fff;
+font:bold 13px Arial;
+color:#555;
+width:90%; 
+padding:10px
+}
+
+
+.circle{
+    margin:13px;
+    width:130px;
+    background:#6B1113;
+    height:130px;
+    text-align:center;
+    border-radius:130px;
+    <strong>line-height: 115px; /* 100 - 10 */</strong>
+}
+
+
+.circleSuccess{
+    margin-left:65px;
+    width:130px;
+    border: 2px solid  green;
+    height:130px;
+    text-align:center;
+    border-radius:130px;
+    <strong>line-height: 115px; /* 100 - 10 */</strong>
+}
+
+.circleError{
+    margin-left:65px;
+    width:130px;
+    border: 2px solid  red;
+    height:130px;
+    text-align:center;
+    border-radius:130px;
+    <strong>line-height: 115px; /* 100 - 10 */</strong>
+}
+
+.circleSmall{
+    margin:6px;
+    width:75px;
+   /* background:#6B1113;*/
+    background:#DEB887;
+    height:75px;
+    text-align:center;
+    border-radius:75px;
+    <strong>line-height: 70px; /* 100 - 10 */</strong>
+}
+
+.marge 
+{
+margin-bottom:2px;
+}
+
+
+#menu {
+  position: fixed;
+  left: 0;
+  top: 40%;
+  width: 8em;
+  margin-top: -2.5em;
+background:white;
+}
+
+

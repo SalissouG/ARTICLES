@@ -1,0 +1,362 @@
+<html lang="en" hola_ext_inject="disabled"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title></title>
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="images/benoolend-favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/benoolend-favicon.ico" type="image/x-icon">
+
+    <!-- Web Fonts -->
+    <link rel="stylesheet" href="files/app.css">
+
+    <!-- CSS Global Compulsory -->
+    <link rel="stylesheet" href="files/bootstrap.min.css">
+    <link rel="stylesheet" href="files/style.css">
+
+
+    <!-- CSS Header and Footer -->
+    <link rel="stylesheet" href="files/header-default.css">
+    <link rel="stylesheet" href="files/footer-v1.css">
+
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="files/animate.css">
+    <link rel="stylesheet" href="files/line-icons.css">
+    <link rel="stylesheet" href="files/font-awesome.min.css">
+
+ <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    <!--[if lt IE 9]><link rel="stylesheet" href="assets/plugins/sky-forms-pro/skyforms/css/sky-forms-ie8.css"><![endif]-->
+
+    <!-- CSS Theme -->
+    <link rel="stylesheet" href="files/default.css" id="style_color">
+    <link rel="stylesheet" href="files/dark.css">
+
+
+    <link rel="stylesheet" href="files/sky-forms.css">
+    <link rel="stylesheet" href="files/custom-sky-forms.css">
+    <!-- CSS Customization -->
+    <link rel="stylesheet" href="files/custom.css">
+
+    <link rel="stylesheet" href="files/jquery-ui.css">
+
+
+    <script src="files/jquery.js"></script>
+    <script src="files/jquery-ui.js"></script>
+    <script src="files/jquery.session.js"></script>
+
+    <script src="files/validator.js"></script>
+
+    <script src="js/checksession.js"></script>
+
+    <!-- CSS Customization -->
+    <script src="exportjs/xlsx.core.min.js"></script>
+    <script src="exportjs/blob.js"></script>
+    <script src="exportjs/FileSaver.js"></script>
+    <script src="exportjs/tableexport.js"></script>
+
+    <script src="exportjs/jspdf.min.js"></script>
+    <script src="exportjs/jspdf.plugin.autotable.js"></script>
+
+
+
+
+    <!--
+
+ Web Fonts
+
+-->
+
+    <link href="files/css.css" rel ="stylesheet"/>
+    <link href="style.css" rel ="stylesheet"/>
+
+
+
+<body  style="background:white">
+
+<div class="row" style="background: #6B1113">
+<div class="col-lg-1"></div>
+<div class="col-lg-3" style="color:white"><h1>e-something</h1></div>
+<div class="col-lg-3"></div>
+<div class="col-lg-1"><a onclick="listing();" data-toggle="tab" href="#listing" aria-expanded="false">
+
+                   <div class="circleSmall" >
+
+                   <i class="fa fa-linkedin" aria-hidden="true" style="font-size:30px; color: #6B1113; margin-top:25px"></i>
+
+                   </div>
+
+                  </a></div>
+<div class="col-lg-1"><a  onclick="evenement();" data-toggle="tab" href="#evenement" aria-expanded="false">
+
+                    <div class="circleSmall" >
+
+                   <i class="fa fa-facebook" aria-hidden="true" style="font-size:30px; color: #6B1113; margin-top:25px"></i>
+
+                   </div>
+
+                </a></div>
+<div class="col-lg-1"><a onclick="affectation();" data-toggle="tab" href="#affectation" aria-expanded="false">
+
+                     <div class="circleSmall" >
+
+                         <i class="fa fa-twitter" aria-hidden="true" style="font-size:30px; color:#6B1113 ; margin-top:25px"></i>
+
+                   </div>
+
+                </a>
+
+</div>
+<div class="col-lg-1"><a onclick="affectation();" data-toggle="tab" href="#affectation" aria-expanded="false">
+                     <div class="circleSmall" >
+                         <i class="fa fa-youtube" aria-hidden="true" style="font-size:30px; color:#6B1113 ; margin-top:25px"></i>
+                   </div>
+                </a>
+</div>
+</div>
+
+
+
+
+<div class="row" style="background:white">
+<div class="col-lg-12"> &nbsp;</div>
+</div>
+
+<div class="row" > <!---begin row big---->
+
+<div class="col-lg-8"> <!---begin col 1 big---->
+
+<!-- Tab v3 -->
+					<div class="row tab-v3">
+						<div class="col-sm-4">
+<ul class="nav nav-pills nav-stacked">
+<li class="active"><a href="#accueil" data-toggle="tab"><i class="fa fa-home"></i> Accueil</a></li>
+<li><a href="#articles" data-toggle="tab"><i class="fa fa-pencil-square-o"></i>Articles </a></li>
+<li><a href="#evenements" data-toggle="tab"><i class="fa fa-pencil-square-o"></i>Evénements </a></li>
+<li><a href="#creerArticle" data-toggle="tab"><i class="fa fa-pencil-square-o"></i> Créer un article</a></li>
+<li><a href="#creerEvenement" data-toggle="tab"><i class="fa fa-pencil-square-o"></i>Créer un événements </a></li>
+ </ul>
+						</div>
+						<div class="col-sm-8">
+							<div class="tab-content">
+								<div class="tab-pane fade in active" id="accueil">
+									
+
+<table style="width:40%" >
+
+<% for(var i=images.length-1; i!=0 ; i--) {%>
+
+<TR > <img src="http://0.0.0.0:3005/uploads/<%= images[i].name %>" style="width:99% ; text-align: center" > </TR>
+<div>
+<div  class="messageRect" >
+              <%= images[i].message%>
+                </div>
+<a style="margin-left:25%" href="/suppression/<%= images[i]._id %>" class="button cross"> </a>
+</div>
+            
+<% } %>
+</table>
+
+								</div>
+<div class="tab-pane fade in active" id="articles">
+ARTICLES
+</div>
+
+<div class="tab-pane fade in active" id="evenements">
+EVENEMENTS
+</div>
+								<div class="tab-pane fade in" id="creerArticle">
+									<form 
+
+
+class="sky-form"
+id        =  "uploadForm"
+     enctype   =  "multipart/form-data"
+     action    =  "/upload"
+     method    =  "post"
+>
+
+
+											<label class="input">
+												<i class="icon-append fa fa-user"></i>
+												<input type="text" placeholder="TITRE">
+											</label>
+
+
+											<label class="input">
+												<i class="icon-append fa fa-user"></i>
+												<input type="text" placeholder="AUTEUR">
+											</label>
+
+
+								<label class="textarea">
+                                                                         <i class="icon-append fa fa-comment"></i>
+									<textarea rows="14"  placeholder="ARTICLES" name="message"></textarea>
+								</label>
+
+
+<label for="file" class="input input-file">
+									<div class="button"><input type="file" id="file" name="file" onchange="this.parentNode.nextSibling.value = this.value" style="background: #6B1113">Browse</div><input type="text" readonly>
+								</label>
+
+<button type="submit"   name="submit" class="btn-u ">Upload Image</button>
+
+
+
+</form>
+
+
+
+
+                                                                </div>
+								
+
+
+<div class="tab-pane fade in active" id="creerEvenement">
+CREER EVENEMENTS
+</div>
+							</div>
+						</div>
+					</div>
+
+
+ </div><!--end col 1 big----->
+
+
+<div class="col-lg-4"> <!---begin col 2 big---->
+
+
+<!-- Grey Panel with Equal Height -->
+							<div class="panel panel-grey equal-height-column">
+								<div class="panel-heading" style="background: #6B1113">
+									<h3 class="panel-title"><i class="fa fa-tasks"></i>Evénements</h3>
+								</div>
+								<div class="panel-body">
+
+<!-- Accordion v1 -->
+					<div class="panel-group acc-v1" id="accordion-1">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-1" href="#collapse-One">
+										Collapsible Group Item #1
+									</a>
+								</h4>
+							</div>
+							<div id="collapse-One" class="panel-collapse collapse in">
+								<div class="panel-body">
+									<div class="row">
+										<div class="col-md-4">
+											<img class="img-responsive" src="assets/img/main/img12.jpg" alt="">
+										</div>
+										<div class="col-md-8">
+											Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-1" href="#collapse-Two">
+										Collapsible Group Item #2
+									</a>
+								</h4>
+							</div>
+							<div id="collapse-Two" class="panel-collapse collapse">
+								<div class="panel-body">
+									<div class="row">
+										<div class="col-md-8">
+											<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.</p>
+											<ul class="list-unstyled">
+												<li><i class="fa fa-check color-green"></i> Donec id elit non mi porta gravida at eget metus..</li>
+												<li><i class="fa fa-check color-green"></i> Fusce dapibus, tellus ac cursus comodo egetine..</li>
+												<li><i class="fa fa-check color-green"></i> Food truck quinoa nesciunt laborum eiusmod runch..</li>
+											</ul>
+										</div>
+										<div class="col-md-4">
+											<img class="img-responsive" src="assets/img/main/img9.jpg" alt="">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-1" href="#collapse-Three">
+										Collapsible Group Item #3
+									</a>
+								</h4>
+							</div>
+							<div id="collapse-Three" class="panel-collapse collapse">
+								<div class="panel-body">
+									Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Food truck quinoa nesciunt laborum eiusmodolf moon tempor, sunt aliqua put a bird. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+								</div>
+							</div>
+						</div>
+
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-1" href="#collapse-Four">
+										Collapsible Group Item #4
+									</a>
+								</h4>
+							</div>
+							<div id="collapse-Four" class="panel-collapse collapse">
+								<div class="panel-body">
+									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- End Accordion v1 -->
+									
+								</div>
+							</div>
+							<!-- End Grey Panel with Equal Height -->
+
+
+</div><!--end col 2 big----->
+
+
+
+</div><!--end row big----->
+
+<script type="text/javascript" src="files/app.js"></script>
+<script type="text/javascript" src="files/order.js"></script>
+<script type="text/javascript" src="files/review.js"></script>
+<script type="text/javascript" src="files/checkout.js"></script>
+<script type="text/javascript" src="files/style-switcher.js"></script>
+
+<script src="files/masking.js" type="text/javascript"></script>
+
+<!--<script src="files/datepicker-fr.js" type="text/javascript"></script>-->
+
+
+<!--<script type="text/javascript">-->
+<!--    jQuery(document).ready(function() {-->
+<!--        App.init();-->
+<!--        Masking.initMasking();-->
+<!--        Datepicker.initDatepicker();-->
+<!--        Validation.initValidation();-->
+<!--        StyleSwitcher.initStyleSwitcher();-->
+<!--    });-->
+<!--</script>-->
+
+
+
+
+
+</body>
