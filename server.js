@@ -170,8 +170,15 @@ res.send(mapImages);
 
 app.post('/upload',upload.single('file'),function(req,res){
 
-var message =req.body.message;
-var mapImage= new MapImage({ name:req.file.filename, message: message}); 
+var message = req.body.message;
+var titre = req.body.titre;
+var auteur = req.body.auteur;
+var heure = req.body.heure;
+var minute = req.body.minute;
+var date = req.body.date;
+
+var mapImage= new MapImage({ name:req.file.filename, message: message , titre : titre , 
+                                       auteur: auteur, heure : heure, minute : minute, date : date}); 
 mapImage.save(function(err,mapImage){
 if(err)
 {

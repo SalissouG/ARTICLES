@@ -81,13 +81,17 @@
 
 <body  style="background:white">
 
-<div class="row" style="background: #6B1113">
+
+
+<div class="panel panel-grey equal-height-column"> <!--begin panel big----->
+         <div class="panel-heading" style="background: #6B1113"><!--begin headin --->
+	    <div class="row" style="background: #6B1113">
 <div class="col-lg-1"></div>
 <div class="col-lg-3" style="color:white"><h1>e-something</h1></div>
 <div class="col-lg-3"></div>
 <div class="col-lg-1"><a onclick="listing();" data-toggle="tab" href="#listing" aria-expanded="false">
 
-                   <div class="circleSmall" >
+                   <div class="circleSmall"  >
 
                    <i class="fa fa-linkedin" aria-hidden="true" style="font-size:30px; color: #6B1113; margin-top:25px"></i>
 
@@ -121,8 +125,8 @@
                 </a>
 </div>
 </div>
-
-
+	</div><!---end--->
+<div class="panel-body"><!--begin body panel big----->
 
 
 <div class="row" style="background:white">
@@ -139,26 +143,32 @@
 <ul class="nav nav-pills nav-stacked">
 <li class="active"><a href="#accueil" data-toggle="tab"><i class="fa fa-home"></i> Accueil</a></li>
 <li><a href="#articles" data-toggle="tab"><i class="fa fa-pencil-square-o"></i>Articles </a></li>
-<li><a href="#evenements" data-toggle="tab"><i class="fa fa-pencil-square-o"></i>Evénements </a></li>
+<li><a href="#evenements" data-toggle="tab"><i class="fa fa-tasks"></i>Evénements </a></li>
 <li><a href="#creerArticle" data-toggle="tab"><i class="fa fa-pencil-square-o"></i> Créer un article</a></li>
-<li><a href="#creerEvenement" data-toggle="tab"><i class="fa fa-pencil-square-o"></i>Créer un événements </a></li>
+<li><a href="#creerEvenement" data-toggle="tab"><i class="fa fa-pencil-square-o"></i>Créer un événement </a></li>
  </ul>
 						</div>
 						<div class="col-sm-8">
 							<div class="tab-content">
 								<div class="tab-pane fade in active" id="accueil">
+ <h1 style=" color: #6B1113 "><i class="fa fa-home"></i> Accueil</a></h1>
 									
 
 <table style="width:40%" >
 
 <% for(var i=images.length-1; i!=0 ; i--) {%>
 
-<TR > <img src="http://0.0.0.0:3005/uploads/<%= images[i].name %>" style="width:99% ; text-align: center" > </TR>
+<TR > <img src="http://0.0.0.0:3005/uploads/<%= images[0].name %>" style="width:99% ; text-align: center" > </TR>
 <div>
 <div  class="messageRect" >
-              <%= images[i].message%>
+              <%= images[i].message%> </br>
+              <%= images[i].titre %></br>
+              <%= images[i].auteur %></br>
+              <%= images[i].date%></br>
+              <%= images[i].heure%>h <%= images[i].minute%></br>
+             
                 </div>
-<a style="margin-left:25%" href="/suppression/<%= images[i]._id %>" class="button cross"> </a>
+<!--a style="margin-left:25%" href="/suppression/<%= images[0]._id %>" class="button cross"> </a--->
 </div>
             
 <% } %>
@@ -166,16 +176,18 @@
 
 								</div>
 <div class="tab-pane fade in active" id="articles">
-ARTICLES
+<h1 style=" color: #6B1113 "><i class="fa fa-pencil-square-o"></i> Articles</a></h1>
 </div>
 
 <div class="tab-pane fade in active" id="evenements">
-EVENEMENTS
+<h1 style=" color: #6B1113 "><i class="fa fa-tasks"></i> Evénements</a></h1>
 </div>
-								<div class="tab-pane fade in" id="creerArticle">
-									<form 
 
+<div class="tab-pane fade in" id="creerArticle">
 
+<h1 style=" color: #6B1113 "><i class="fa fa-pencil-square-o"></i> Créer un article</a></h1>
+									
+<form 
 class="sky-form"
 id        =  "uploadForm"
      enctype   =  "multipart/form-data"
@@ -184,31 +196,62 @@ id        =  "uploadForm"
 >
 
 
-											<label class="input">
-												<i class="icon-append fa fa-user"></i>
-												<input type="text" placeholder="TITRE">
-											</label>
+<label class="input">
+ <i class="icon-append fa fa-user"></i>
+ <input name="titre" type="text" placeholder="TITRE">
+</label>
+
+<label class="input">
+ <i class="icon-append fa fa-bars"></i>
+ <input name="auteur" type="text" placeholder="AUTEUR">
+</label>
+
+<label class="input">
+  <i class="icon-append fa fa-calendar"></i>
+             <input type="text"  name="date" id="date_id"  placeholder="DATE" >
+</label> 
+
+									
 
 
-											<label class="input">
-												<i class="icon-append fa fa-user"></i>
-												<input type="text" placeholder="AUTEUR">
-											</label>
+<div class="row">
+ <div class="col-lg-6"> 
+       <label class="select" >
+               <i class="icon-append fa fa-caret-down"></i>
+	        <select name="heure" placeholder="HEURE">  
+                          <option> Heure</option>
+                          <option value="14"> 14</option>
+                </select>
+	</label> 
+</div>
+   <div class="col-lg-6"> 
+        <label class="select" >
+	   <i class="icon-append fa fa-caret-down"></i>
+		<select name="minute" placeholder="MINUTE">  
+                       <option> Minute</option>
+                       <option value="30"> 30 </option>
+                </select>
+	</label> 
+    </div>
+</div>
 
 
-								<label class="textarea">
+<img  id="blah"  style="width:99% ; text-align: center" >
+
+
+<label for="file" class="input input-file"  onchange="this.parentNode.nextSibling.value = this.value"   onclick="getfile();">
+									<div class="button"><input type="file" name="file" id="file"  onchange="this.parentNode.nextSibling.value = this.value" style="background: #6B1113">Browse</div><input type="text" readonly>
+         
+								</label>
+
+							      <label class="textarea">
                                                                          <i class="icon-append fa fa-comment"></i>
 									<textarea rows="14"  placeholder="ARTICLES" name="message"></textarea>
 								</label>
 
 
-<label for="file" class="input input-file">
-									<div class="button"><input type="file" id="file" name="file" onchange="this.parentNode.nextSibling.value = this.value" style="background: #6B1113">Browse</div><input type="text" readonly>
-								</label>
 
 <button type="submit"   name="submit" class="btn-u ">Upload Image</button>
-
-
 
 </form>
 
@@ -220,7 +263,7 @@ id        =  "uploadForm"
 
 
 <div class="tab-pane fade in active" id="creerEvenement">
-CREER EVENEMENTS
+<h1 style=" color: #6B1113 "><i class="fa fa-pencil-square-o"></i> Créer un événement</a></h1>
 </div>
 							</div>
 						</div>
@@ -240,88 +283,6 @@ CREER EVENEMENTS
 								</div>
 								<div class="panel-body">
 
-<!-- Accordion v1 -->
-					<div class="panel-group acc-v1" id="accordion-1">
-						<div class="panel panel-default">
-							<div class="panel-heading">
-								<h4 class="panel-title">
-									<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-1" href="#collapse-One">
-										Collapsible Group Item #1
-									</a>
-								</h4>
-							</div>
-							<div id="collapse-One" class="panel-collapse collapse in">
-								<div class="panel-body">
-									<div class="row">
-										<div class="col-md-4">
-											<img class="img-responsive" src="assets/img/main/img12.jpg" alt="">
-										</div>
-										<div class="col-md-8">
-											Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="panel panel-default">
-							<div class="panel-heading">
-								<h4 class="panel-title">
-									<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-1" href="#collapse-Two">
-										Collapsible Group Item #2
-									</a>
-								</h4>
-							</div>
-							<div id="collapse-Two" class="panel-collapse collapse">
-								<div class="panel-body">
-									<div class="row">
-										<div class="col-md-8">
-											<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.</p>
-											<ul class="list-unstyled">
-												<li><i class="fa fa-check color-green"></i> Donec id elit non mi porta gravida at eget metus..</li>
-												<li><i class="fa fa-check color-green"></i> Fusce dapibus, tellus ac cursus comodo egetine..</li>
-												<li><i class="fa fa-check color-green"></i> Food truck quinoa nesciunt laborum eiusmod runch..</li>
-											</ul>
-										</div>
-										<div class="col-md-4">
-											<img class="img-responsive" src="assets/img/main/img9.jpg" alt="">
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="panel panel-default">
-							<div class="panel-heading">
-								<h4 class="panel-title">
-									<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-1" href="#collapse-Three">
-										Collapsible Group Item #3
-									</a>
-								</h4>
-							</div>
-							<div id="collapse-Three" class="panel-collapse collapse">
-								<div class="panel-body">
-									Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Food truck quinoa nesciunt laborum eiusmodolf moon tempor, sunt aliqua put a bird. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-								</div>
-							</div>
-						</div>
-
-						<div class="panel panel-default">
-							<div class="panel-heading">
-								<h4 class="panel-title">
-									<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-1" href="#collapse-Four">
-										Collapsible Group Item #4
-									</a>
-								</h4>
-							</div>
-							<div id="collapse-Four" class="panel-collapse collapse">
-								<div class="panel-body">
-									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- End Accordion v1 -->
 									
 								</div>
 							</div>
@@ -334,6 +295,12 @@ CREER EVENEMENTS
 
 </div><!--end row big----->
 
+
+
+
+</div><!--end body panel big----->
+</div><!--end panel big----->
+
 <script type="text/javascript" src="files/app.js"></script>
 <script type="text/javascript" src="files/order.js"></script>
 <script type="text/javascript" src="files/review.js"></script>
@@ -342,21 +309,48 @@ CREER EVENEMENTS
 
 <script src="files/masking.js" type="text/javascript"></script>
 
-<!--<script src="files/datepicker-fr.js" type="text/javascript"></script>-->
+<script type="text/javascript" >
+function getfile(){
+    document.getElementById('file').click();
+    document.getElementById('selectedfile').value=document.getElementById('file').value
+}
 
 
-<!--<script type="text/javascript">-->
-<!--    jQuery(document).ready(function() {-->
-<!--        App.init();-->
-<!--        Masking.initMasking();-->
-<!--        Datepicker.initDatepicker();-->
-<!--        Validation.initValidation();-->
-<!--        StyleSwitcher.initStyleSwitcher();-->
-<!--    });-->
-<!--</script>-->
+function readURL(input) {
+
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#blah').attr('src', e.target.result);
+        }
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
 
 
 
+$("#file").change(function(){
+    readURL(this);
+});
 
+
+$( "#date_id" ).datepicker({
+                
+                closeText: 'Fermer',
+                prevText: 'Précédent',
+                nextText: 'Suivant',
+                monthNames: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+                monthNamesShort: ['Janv.', 'Févr.', 'Mars', 'Avril', 'Mai', 'Juin', 'Juil.', 'Août', 'Sept.', 'Oct.', 'Nov.', 'Déc.'],
+                dayNames: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
+                dayNamesShort: ['Dim.', 'Lun.', 'Mar.', 'Mer.', 'Jeu.', 'Ven.', 'Sam.'],
+                dayNamesMin: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
+                weekHeader: 'Sem.',
+                dateFormat: 'dd/mm/yy'
+               
+            });
+
+</script>
 
 </body>

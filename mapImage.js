@@ -3,7 +3,12 @@ var  autoIncrement=require('./db.js').autoIncrement;
 
 var mapImageSchema = mongoose.Schema({ 
 name: String,
-message: String
+message: String,
+titre : String,
+auteur : String,
+heure : String,
+minute: String,
+date :  String
 });
 
 mapImageSchema.plugin(autoIncrement.plugin, 'MapImage');
