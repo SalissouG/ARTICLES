@@ -52,27 +52,12 @@
     <script src="files/jquery-ui.js"></script>
     <script src="files/jquery.session.js"></script>
 
-    <script src="files/validator.js"></script>
+   
 
-    <script src="js/checksession.js"></script>
+   
 
-    <!-- CSS Customization -->
-    <script src="exportjs/xlsx.core.min.js"></script>
-    <script src="exportjs/blob.js"></script>
-    <script src="exportjs/FileSaver.js"></script>
-    <script src="exportjs/tableexport.js"></script>
+  
 
-    <script src="exportjs/jspdf.min.js"></script>
-    <script src="exportjs/jspdf.plugin.autotable.js"></script>
-
-
-
-
-    <!--
-
- Web Fonts
-
--->
 
     <link href="files/css.css" rel ="stylesheet"/>
     <link href="style.css" rel ="stylesheet"/>
@@ -84,47 +69,21 @@
 
 
 <div class="panel panel-grey equal-height-column"> <!--begin panel big----->
-         <div class="panel-heading" style="background: #6B1113"><!--begin headin --->
+         <div class="panel-heading" style="background: #6B1113"><!--begin heading --->
 	    <div class="row" style="background: #6B1113">
-<div class="col-lg-3" style="color:white"><h1>e-something</h1></div>
-<div class="col-lg-1"><a onclick="listing();" data-toggle="tab" href="#listing" aria-expanded="false">
+                         <div class="col-lg-3  col-lg-offset-1 " style="color:white"><h1>e-something</h1></div>
+            </div>
+	</div><!---end heading--->
 
-                   <div class="circleSmall"  >
 
-                   <i class="fa fa-linkedin" aria-hidden="true" style="font-size:30px; color: #6B1113; margin-top:25px"></i>
+ 
 
-                   </div>
 
-                  </a></div>
-<div class="col-lg-1"><a  onclick="evenement();" data-toggle="tab" href="#evenement" aria-expanded="false">
-
-                    <div class="circleSmall" >
-
-                   <i class="fa fa-facebook" aria-hidden="true" style="font-size:30px; color: #6B1113; margin-top:25px"></i>
-
-                   </div>
-
-                </a></div>
-<div class="col-lg-1"><a onclick="affectation();" data-toggle="tab" href="#affectation" aria-expanded="false">
-
-                     <div class="circleSmall" >
-
-                         <i class="fa fa-twitter" aria-hidden="true" style="font-size:30px; color:#6B1113 ; margin-top:25px"></i>
-
-                   </div>
-
-                </a>
-
-</div>
-<div class="col-lg-1"><a onclick="affectation();" data-toggle="tab" href="#affectation" aria-expanded="false">
-                     <div class="circleSmall" >
-                         <i class="fa fa-youtube" aria-hidden="true" style="font-size:30px; color:#6B1113 ; margin-top:25px"></i>
-                   </div>
-                </a>
-</div>
-</div>
-	</div><!---end--->
 <div class="panel-body"><!--begin body panel big----->
+
+
+
+
 
 
 <div class="row" style="background:white">
@@ -137,53 +96,117 @@
 
 <!-- Tab v3 -->
 					<div class="row tab-v3">
-						<div class="col-sm-4">
+						<div class="col-lg-4">
 <ul class="nav nav-pills nav-stacked">
 <li class="active"><a href="#accueil" data-toggle="tab"><i class="fa fa-home"></i> Accueil</a></li>
-<li><a href="#articles" data-toggle="tab"><i class="fa fa-pencil-square-o"></i>Articles </a></li>
+<li><a href="#articles" data-toggle="tab"><i class="fa fa-bars"></i>Articles </a></li>
 <li><a href="#evenements" data-toggle="tab"><i class="fa fa-tasks"></i>Evénements </a></li>
 <li><a href="#creerArticle" data-toggle="tab"><i class="fa fa-pencil-square-o"></i> Créer un article</a></li>
 <li><a href="#creerEvenement" data-toggle="tab"><i class="fa fa-pencil-square-o"></i>Créer un événement </a></li>
  </ul>
 						</div>
-						<div class="col-sm-8">
+						<div class="col-lg-8">
 							<div class="tab-content">
 								<div class="tab-pane fade in active" id="accueil">
- <h1 style=" color: #6B1113 "><i class="fa fa-home"></i> Accueil</a></h1>
+
 									
 
 <table style="width:40%" >
 
 <% for(var i=images.length-1; i!=0 ; i--) {%>
 
+ <h2 style=" color: black "> <%= images[i].titre %></a></h2>
+
+ <p style=" color: black">Le <%= images[i].date %> à <%= images[i].heure%>h <%= images[i].minute%></a></p>
+
 <TR > <img src="http://0.0.0.0:3005/uploads/<%= images[0].name %>" style="width:99% ; text-align: center" > </TR>
-<div>
+
 <div  class="messageRect" >
               <%= images[i].message%> </br>
-              <%= images[i].titre %></br>
-              <%= images[i].auteur %></br>
-              <%= images[i].date%></br>
-              <%= images[i].heure%>h <%= images[i].minute%></br>
+             
+              <%= images[i].auteur %>
+           
+              
              
                 </div>
+
+<div class="row" > <!---begin row ---->
+
+<div class="col-lg-9"> <!---begin col 1--->
+
+
+<!---begin commentires---->
+<button class="btn-u" data-toggle="modal" data-target="#seeComment<%= images[i]._id%>">Consulter les commentaires</button>
+							<div class="modal fade" id="seeComment<%= images[i]._id%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+											<h4 id="myModalLabel1" class="modal-title">Commentaires</h4>
+										</div>
+										<div class="modal-body">
+											
+
+											
+										</div>
+										<div class="modal-footer">
+											<button data-dismiss="modal" class="btn-u btn-u-default" type="button">Close</button>
+											
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- End commentaires -->
+
+
+
+
+<!---begin commenter---->
+
+</div><!-- End col 1 -->
+<div class="col-lg-3"> <!---begin col 2--->
+<button class="btn-u" data-toggle="modal" data-target="#commenter<%= images[i]._id%>">Commenter</button>
+							<div class="modal fade" id="commenter<%= images[i]._id%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+											<h4 id="myModalLabel1" class="modal-title">Commenter</h4>
+										</div>
+										<div class="modal-body">
+											
+
+											<%= images[i]._id%>
+										</div>
+										<div class="modal-footer">
+											<button data-dismiss="modal" class="btn-u btn-u-default" type="button">Close</button>
+											<button class="btn-u" type="button">Save changes</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- End commenter -->
+</div><!-- End col 2 -->
+</div><!-- End row -->
+
 <!--a style="margin-left:25%" href="/suppression/<%= images[0]._id %>" class="button cross"> </a--->
-</div>
+
             
 <% } %>
 </table>
 
-								</div>
-<div class="tab-pane fade in active" id="articles">
-<h1 style=" color: #6B1113 "><i class="fa fa-pencil-square-o"></i> Articles</a></h1>
+								</div> 
+<div class="tab-pane fade in " id="articles">
+<h1 style=" color: #6B1113 "><i class="fa fa-bars"></i> Articles</a></h1>
 </div>
 
-<div class="tab-pane fade in active" id="evenements">
+<div class="tab-pane fade in " id="evenements">
 <h1 style=" color: #6B1113 "><i class="fa fa-tasks"></i> Evénements</a></h1>
 </div>
 
 <div class="tab-pane fade in" id="creerArticle">
 
-<h1 style=" color: #6B1113 "><i class="fa fa-pencil-square-o"></i> Créer un article</a></h1>
+<h1 style=" color: #6B1113 "><i class="fa fa-pencil-square-o"></i> Article</a></h1>
 									
 <form 
 class="sky-form"
@@ -195,12 +218,12 @@ id        =  "uploadForm"
 
 
 <label class="input">
- <i class="icon-append fa fa-user"></i>
+ <i class="icon-append fa fa-minus"></i>
  <input name="titre" type="text" placeholder="TITRE">
 </label>
 
 <label class="input">
- <i class="icon-append fa fa-bars"></i>
+ <i class="icon-append fa fa-user"></i>
  <input name="auteur" type="text" placeholder="AUTEUR">
 </label>
 
@@ -238,7 +261,7 @@ id        =  "uploadForm"
 
 
 <label for="file" class="input input-file"  onchange="this.parentNode.nextSibling.value = this.value"   onclick="getfile();">
-									<div class="button"><input type="file" name="file" id="file"  onchange="this.parentNode.nextSibling.value = this.value" style="background: #6B1113">Browse</div><input type="text" readonly>
+									<div class="button"><input type="file" name="file" id="file"  onchange="this.parentNode.nextSibling.value = this.value" style="background: #6B1113">Sélectionner une image</div><input type="text" readonly>
          
 								</label>
 
@@ -260,8 +283,64 @@ id        =  "uploadForm"
 								
 
 
-<div class="tab-pane fade in active" id="creerEvenement">
-<h1 style=" color: #6B1113 "><i class="fa fa-pencil-square-o"></i> Créer un événement</a></h1>
+<div class="tab-pane fade in " id="creerEvenement">
+
+<h1 style=" color: #6B1113 "><i class="fa fa-pencil-square-o"></i> Evénement</a></h1>
+
+<form 
+class="sky-form"
+
+     enctype   =  "multipart/form-data"
+     action    =  "/upload"
+     method    =  "post"
+>
+
+<label class="input">
+  <i class="icon-append fa fa-minus"></i>
+             <input type="text"  name="etitre"   placeholder="TITRE" >
+</label> 
+
+
+<label class="input">
+ <i class="icon-append fa fa-user"></i>
+ <input name="enom" type="text" placeholder="nom">
+</label>
+
+<label class="input">
+  <i class="icon-append fa fa-calendar"></i>
+             <input type="text"  name="edate" id="date_event_id"  placeholder="DATE" >
+</label> 
+
+<label class="input">
+  <i class="icon-append fa fa-minus"></i>
+             <input type="text"  name="elieu"  placeholder="LIEU" >
+</label> 
+
+									
+
+
+<div class="row">
+ <div class="col-lg-6"> 
+       <label class="select" >
+               <i class="icon-append fa fa-caret-down"></i>
+	        <select name="eheure" placeholder="HEURE">  
+                          <option> Heure</option>
+                          <option value="14"> 14</option>
+                </select>
+	</label> 
+</div>
+   <div class="col-lg-6"> 
+        <label class="select" >
+	   <i class="icon-append fa fa-caret-down"></i>
+		<select name="eminute" placeholder="MINUTE">  
+                       <option> Minute</option>
+                       <option value="30"> 30 </option>
+                </select>
+	</label> 
+    </div>
+</div>
+
+</form>	
 </div>
 							</div>
 						</div>
@@ -274,6 +353,8 @@ id        =  "uploadForm"
 <div class="col-lg-4"> <!---begin col 2 big---->
 
 
+
+
 <!-- Grey Panel with Equal Height -->
 							<div class="panel panel-grey equal-height-column">
 								<div class="panel-heading" style="background: #6B1113">
@@ -284,6 +365,27 @@ id        =  "uploadForm"
 									
 								</div>
 							</div>
+
+<!--div id="menu">
+<a onclick="listing();" data-toggle="tab" href="#listing" aria-expanded="false">
+                   <div class="circleSmall" >
+                   <i class="fa fa-users" aria-hidden="true" style="font-size:30px; color: white; margin-top:25px"></i>
+                   </div>
+                  </a>
+<a  onclick="evenement();" data-toggle="tab" href="#evenement" aria-expanded="false">
+                    <div class="circleSmall" >
+                   <i class="fa fa-tasks" aria-hidden="true" style="font-size:30px; color: white; margin-top:25px"></i>
+                   </div>
+                </a>
+<a onclick="affectation();" data-toggle="tab" href="#affectation" aria-expanded="false">
+                     <div class="circleSmall" >
+                         <i class="fa fa-share" aria-hidden="true" style="font-size:30px; color: white; margin-top:25px"></i>
+                   </div>
+                </a>
+
+
+</div--->
+
 							<!-- End Grey Panel with Equal Height -->
 
 
@@ -335,6 +437,21 @@ $("#file").change(function(){
 
 
 $( "#date_id" ).datepicker({
+                
+                closeText: 'Fermer',
+                prevText: 'Précédent',
+                nextText: 'Suivant',
+                monthNames: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+                monthNamesShort: ['Janv.', 'Févr.', 'Mars', 'Avril', 'Mai', 'Juin', 'Juil.', 'Août', 'Sept.', 'Oct.', 'Nov.', 'Déc.'],
+                dayNames: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
+                dayNamesShort: ['Dim.', 'Lun.', 'Mar.', 'Mer.', 'Jeu.', 'Ven.', 'Sam.'],
+                dayNamesMin: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
+                weekHeader: 'Sem.',
+                dateFormat: 'dd/mm/yy'
+               
+            });
+
+$( "#date_event_id" ).datepicker({
                 
                 closeText: 'Fermer',
                 prevText: 'Précédent',
