@@ -83,7 +83,21 @@ app.get('/',function(req,res){
     console.log(err);
   }
   else{
-       res.render("accueil.ejs",{images:mapImages});
+
+               Evenement.find({},function(err ,evenements){
+                    if(err)
+                    {
+                           console.log(err);
+                    }
+                    else
+                        {
+                            res.render("accueil.ejs",{images:mapImages,evenements:evenements });
+                         }
+           
+                   });
+
+
+       
       }
    });
 
