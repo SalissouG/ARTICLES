@@ -7,6 +7,7 @@ var fs=require('fs');
 var mime=require('mime');
 var path=require('path');
 var MapImage= require('./mapImage.js').MapImage;
+var Evenement= require('./evenement.js').Evenement;
 
 
 var storage = multer.diskStorage({
