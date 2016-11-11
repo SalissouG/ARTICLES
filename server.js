@@ -7,7 +7,7 @@ var fs=require('fs');
 var mime=require('mime');
 var path=require('path');
 var MapImage= require('./mapImage.js').MapImage;
-var Evenement= require('./evenement.js').Evenement;
+//var Evenement= require('./evenement.js').Evenement;
 
 
 var storage = multer.diskStorage({
@@ -60,7 +60,7 @@ app.get('/download', function(req, res){
 
 
 app.get('/im',function(req,res){
-  
+
 MapImage.find(function(err ,mapImages){
 if(err)
 {
@@ -76,7 +76,7 @@ res.render("page.ejs",{images:mapImages});
 
 
 app.get('/',function(req,res){
-  
+
   MapImage.find({},function(err ,mapImages){
   if(err)
   {
@@ -84,27 +84,27 @@ app.get('/',function(req,res){
   }
   else{
 
-               Evenement.find({},function(err ,evenements){
+            /*   Evenement.find({},function(err ,evenements){
                     if(err)
                     {
                            console.log(err);
                     }
                     else
-                        {
-                            res.render("accueil.ejs",{images:mapImages,evenements:evenements });
-                         }
-           
-                   });
+                        {*/
+                            res.render("accueil.ejs",{images:mapImages});
+                        /* }
+
+                   });*/
 
 
-       
+
       }
    });
 
 });
 
 app.get('/suppression/:id',function(req,res){
-  
+
 MapImage.remove({_id: req.params.id},function(err ,mapImages){
 if(err)
 {
@@ -177,7 +177,7 @@ res.send(mapImages);
 }
 }).limit(30);
 
-});	
+});
 
 
 
@@ -192,8 +192,8 @@ var heure = req.body.heure;
 var minute = req.body.minute;
 var date = req.body.date;
 
-var mapImage= new MapImage({ name:req.file.filename, message: message , titre : titre , 
-                                       auteur: auteur, heure : heure, minute : minute, date : date}); 
+var mapImage= new MapImage({ name:req.file.filename, message: message , titre : titre ,
+                                       auteur: auteur, heure : heure, minute : minute, date : date});
 mapImage.save(function(err,mapImage){
 if(err)
 {

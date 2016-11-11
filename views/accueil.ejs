@@ -52,11 +52,11 @@
     <script src="files/jquery-ui.js"></script>
     <script src="files/jquery.session.js"></script>
 
-   
 
-   
 
-  
+
+
+
 
 
     <link href="files/css.css" rel ="stylesheet"/>
@@ -64,7 +64,7 @@
 
 
 
-<body  style="background:white">
+<body  >
 
 
 
@@ -76,7 +76,7 @@
 	</div><!---end heading--->
 
 
- 
+
 
 
 <div class="panel-body"><!--begin body panel big----->
@@ -99,17 +99,19 @@
 						<div class="col-lg-4">
 <ul class="nav nav-pills nav-stacked">
 <li class="active"><a href="#accueil" data-toggle="tab"><i class="fa fa-home"></i> Accueil</a></li>
-<li><a href="#articles" data-toggle="tab"><i class="fa fa-bars"></i>Articles </a></li>
-<li><a href="#evenements" data-toggle="tab"><i class="fa fa-tasks"></i>Evénements </a></li>
+<li><a href="#quiSommesNous" data-toggle="tab"><i class="fa fa-bars"></i>Qui sommes nous ? </a></li>
+<li><a href="#membres" data-toggle="tab"><i class="fa fa-tasks"></i>Membres </a></li>
+<li><a href="#nospartenaires" data-toggle="tab"><i class="fa fa-tasks"></i>Nos partenaires </a></li>
+<li><a href="#contact" data-toggle="tab"><i class="fa fa-pencil-square-o"></i>Nous contacter</a></li>
 <li><a href="#creerArticle" data-toggle="tab"><i class="fa fa-pencil-square-o"></i> Créer un article</a></li>
-<li><a href="#creerEvenement" data-toggle="tab"><i class="fa fa-pencil-square-o"></i>Créer un événement </a></li>
+
  </ul>
 						</div>
 						<div class="col-lg-8">
 							<div class="tab-content">
 								<div class="tab-pane fade in active" id="accueil">
 
-									
+
 
 <table style="width:40%" >
 
@@ -119,96 +121,178 @@
 
  <p style=" color: black">Le <%= images[i].date %> à <%= images[i].heure%>h <%= images[i].minute%></a></p>
 
-<TR > <img src="http://0.0.0.0:3005/uploads/<%= images[0].name %>" style="width:99% ; text-align: center" > </TR>
+<TR > <img src="http://127.0.0.1:3005/uploads/<%= images[i].name %>" style="width:99% ; text-align: center" > </TR>
 
-<div  class="messageRect" >
+
               <%= images[i].message%> </br>
-             
+
               <%= images[i].auteur %>
-           
-              
-             
-                </div>
-
-<div class="row" > <!---begin row ---->
-
-<div class="col-lg-9"> <!---begin col 1--->
-
-
-<!---begin commentires---->
-<button class="btn-u" data-toggle="modal" data-target="#seeComment<%= images[i]._id%>">Consulter les commentaires</button>
-							<div class="modal fade" id="seeComment<%= images[i]._id%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-								<div class="modal-dialog">
-									<div class="modal-content">
-										<div class="modal-header">
-											<button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-											<h4 id="myModalLabel1" class="modal-title">Commentaires</h4>
-										</div>
-										<div class="modal-body">
-											
-
-											
-										</div>
-										<div class="modal-footer">
-											<button data-dismiss="modal" class="btn-u btn-u-default" type="button">Close</button>
-											
-										</div>
-									</div>
-								</div>
-							</div>
-							<!-- End commentaires -->
 
 
 
-
-<!---begin commenter---->
-
-</div><!-- End col 1 -->
-<div class="col-lg-3"> <!---begin col 2--->
-<button class="btn-u" data-toggle="modal" data-target="#commenter<%= images[i]._id%>">Commenter</button>
-							<div class="modal fade" id="commenter<%= images[i]._id%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-								<div class="modal-dialog">
-									<div class="modal-content">
-										<div class="modal-header">
-											<button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-											<h4 id="myModalLabel1" class="modal-title">Commenter</h4>
-										</div>
-										<div class="modal-body">
-											
-
-											<%= images[i]._id%>
-										</div>
-										<div class="modal-footer">
-											<button data-dismiss="modal" class="btn-u btn-u-default" type="button">Close</button>
-											<button class="btn-u" type="button">Save changes</button>
-										</div>
-									</div>
-								</div>
-							</div>
-							<!-- End commenter -->
-</div><!-- End col 2 -->
-</div><!-- End row -->
 
 <!--a style="margin-left:25%" href="/suppression/<%= images[0]._id %>" class="button cross"> </a--->
 
-            
+
 <% } %>
 </table>
 
-								</div> 
-<div class="tab-pane fade in " id="articles">
-<h1 style=" color: #6B1113 "><i class="fa fa-bars"></i> Articles</a></h1>
+								</div>
+<div class="tab-pane fade in " id="quiSommesNous">
+<h1 style=" color: #6B1113 "><i class="fa fa-bars"></i> Qui sommes nous ?</a></h1>
 </div>
 
-<div class="tab-pane fade in " id="evenements">
-<h1 style=" color: #6B1113 "><i class="fa fa-tasks"></i> Evénements</a></h1>
+<div class="tab-pane fade in " id="membres">
+<h1 style=" color: #6B1113 "><i class="fa fa-tasks"></i> Membres</a></h1>
+
+<!-- Thumbnails v1 -->
+					<div class="row">
+						<div class="col-md-6">
+							<div class="thumbnails thumbnail-style thumbnail-kenburn">
+								<div class="thumbnail-img">
+									<div class="overflow-hidden">
+										<img class="img-responsive" src="images/user.jpg" alt="" />
+									</div>
+
+								</div>
+								<div class="caption">
+									<h3><a class="hover-effect" href="#">Membre 1 </a></h3>
+									Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam porta sem.
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="thumbnails thumbnail-style thumbnail-kenburn">
+								<div class="thumbnail-img">
+									<div class="overflow-hidden">
+										<img class="img-responsive" src="images/user.jpg" alt="" />
+									</div>
+
+								</div>
+								<div class="caption">
+									<h3><a class="hover-effect" href="#">Membre 2</a></h3>
+									Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam porta sem.
+								</div>
+							</div>
+						</div>
+
+					</div><!--/row-->
+					<!-- End Thumbnails v1 -->
+
+
+          <!-- Thumbnails v1 -->
+          					<div class="row">
+          						<div class="col-md-6">
+          							<div class="thumbnails thumbnail-style thumbnail-kenburn">
+          								<div class="thumbnail-img">
+          									<div class="overflow-hidden">
+          										<img class="img-responsive" src="images/user.jpg" alt="" />
+          									</div>
+
+          								</div>
+          								<div class="caption">
+          									<h3><a class="hover-effect" href="#">Membre 3</a></h3>
+          									Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam porta sem.
+          								</div>
+          							</div>
+          						</div>
+          						<div class="col-md-6">
+          							<div class="thumbnails thumbnail-style thumbnail-kenburn">
+          								<div class="thumbnail-img">
+          									<div class="overflow-hidden">
+          										<img class="img-responsive" src="images/user.jpg" alt="" />
+          									</div>
+
+          								</div>
+          								<div class="caption">
+          									<h3><a class="hover-effect" href="#">Membre 4</a></h3>
+          									Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam porta sem.
+          								</div>
+          							</div>
+          						</div>
+
+          					</div><!--/row-->
+          					<!-- End Thumbnails v1 -->
+
+
+</div>
+
+
+<div class="tab-pane fade in " id="nospartenaires">
+<h1 style=" color: #6B1113 "><i class="fa fa-users"></i> Nos partenaires</a></h1>
+<!-- Thumbnails v1 -->
+          <div class="row">
+            <div class="col-md-6">
+              <div class="thumbnails thumbnail-style thumbnail-kenburn">
+                <div class="thumbnail-img">
+                  <div class="overflow-hidden">
+                    <img class="img-responsive" src="images/user.jpg" alt="" />
+                  </div>
+
+                </div>
+                <div class="caption">
+                  <h3><a class="hover-effect" href="#">Membre 3</a></h3>
+                  Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam porta sem.
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="thumbnails thumbnail-style thumbnail-kenburn">
+                <div class="thumbnail-img">
+                  <div class="overflow-hidden">
+                    <img class="img-responsive" src="images/user.jpg" alt="" />
+                  </div>
+
+                </div>
+                <div class="caption">
+                  <h3><a class="hover-effect" href="#">Membre 4</a></h3>
+                  Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam porta sem.
+                </div>
+              </div>
+            </div>
+
+          </div><!--/row-->
+          <!-- End Thumbnails v1 -->
+          <!-- Thumbnails v1 -->
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="thumbnails thumbnail-style thumbnail-kenburn">
+                          <div class="thumbnail-img">
+                            <div class="overflow-hidden">
+                              <img class="img-responsive" src="images/user.jpg" alt="" />
+                            </div>
+
+                          </div>
+                          <div class="caption">
+                            <h3><a class="hover-effect" href="#">Membre 3</a></h3>
+                            Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam porta sem.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="thumbnails thumbnail-style thumbnail-kenburn">
+                          <div class="thumbnail-img">
+                            <div class="overflow-hidden">
+                              <img class="img-responsive" src="images/user.jpg" alt="" />
+                            </div>
+
+                          </div>
+                          <div class="caption">
+                            <h3><a class="hover-effect" href="#">Membre 4</a></h3>
+                            Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam porta sem.
+                          </div>
+                        </div>
+                      </div>
+
+                    </div><!--/row-->
+                    <!-- End Thumbnails v1 -->
 </div>
 
 <div class="tab-pane fade in" id="creerArticle">
 
 <h1 style=" color: #6B1113 "><i class="fa fa-pencil-square-o"></i> Article</a></h1>
-									
-<form 
+
+<form
 class="sky-form"
 id        =  "uploadForm"
      enctype   =  "multipart/form-data"
@@ -230,29 +314,29 @@ id        =  "uploadForm"
 <label class="input">
   <i class="icon-append fa fa-calendar"></i>
              <input type="text"  name="date" id="date_id"  placeholder="DATE" >
-</label> 
+</label>
 
-									
+
 
 
 <div class="row">
- <div class="col-lg-6"> 
+ <div class="col-lg-6">
        <label class="select" >
                <i class="icon-append fa fa-caret-down"></i>
-	        <select name="heure" placeholder="HEURE">  
+	        <select name="heure" placeholder="HEURE">
                           <option> Heure</option>
                           <option value="14"> 14</option>
                 </select>
-	</label> 
+	</label>
 </div>
-   <div class="col-lg-6"> 
+   <div class="col-lg-6">
         <label class="select" >
 	   <i class="icon-append fa fa-caret-down"></i>
-		<select name="minute" placeholder="MINUTE">  
+		<select name="minute" placeholder="MINUTE">
                        <option> Minute</option>
                        <option value="30"> 30 </option>
                 </select>
-	</label> 
+	</label>
     </div>
 </div>
 
@@ -262,7 +346,7 @@ id        =  "uploadForm"
 
 <label for="file" class="input input-file"  onchange="this.parentNode.nextSibling.value = this.value"   onclick="getfile();">
 									<div class="button"><input type="file" name="file" id="file"  onchange="this.parentNode.nextSibling.value = this.value" style="background: #6B1113">Sélectionner une image</div><input type="text" readonly>
-         
+
 								</label>
 
 							      <label class="textarea">
@@ -280,67 +364,13 @@ id        =  "uploadForm"
 
 
                                                                 </div>
-								
 
 
-<div class="tab-pane fade in " id="creerEvenement">
 
-<h1 style=" color: #6B1113 "><i class="fa fa-pencil-square-o"></i> Evénement</a></h1>
+<div class="tab-pane fade in " id="contact">
 
-<form 
-class="sky-form"
+<h1 style=" color: #6B1113 "><i class="fa fa-pencil-square-o"></i> Nous contacter</a></h1>
 
-     enctype   =  "multipart/form-data"
-     action    =  "/upload"
-     method    =  "post"
->
-
-<label class="input">
-  <i class="icon-append fa fa-minus"></i>
-             <input type="text"  name="etitre"   placeholder="TITRE" >
-</label> 
-
-
-<label class="input">
- <i class="icon-append fa fa-user"></i>
- <input name="enom" type="text" placeholder="NOM"
-</label>
-
-<label class="input">
-  <i class="icon-append fa fa-calendar"></i>
-             <input type="text"  name="edate" id="date_event_id"  placeholder="DATE" >
-</label> 
-
-<label class="input">
-  <i class="icon-append fa fa-minus"></i>
-             <input type="text"  name="elieu"  placeholder="LIEU" >
-</label> 
-
-									
-
-
-<div class="row">
- <div class="col-lg-6"> 
-       <label class="select" >
-               <i class="icon-append fa fa-caret-down"></i>
-	        <select name="eheure" placeholder="HEURE">  
-                          <option> Heure</option>
-                          <option value="14"> 14</option>
-                </select>
-	</label> 
-</div>
-   <div class="col-lg-6"> 
-        <label class="select" >
-	   <i class="icon-append fa fa-caret-down"></i>
-		<select name="eminute" placeholder="MINUTE">  
-                       <option> Minute</option>
-                       <option value="30"> 30 </option>
-                </select>
-	</label> 
-    </div>
-</div>
-
-</form>	
 </div>
 							</div>
 						</div>
@@ -358,11 +388,11 @@ class="sky-form"
 <!-- Grey Panel with Equal Height -->
 							<div class="panel panel-grey equal-height-column">
 								<div class="panel-heading" style="background: #6B1113">
-									<h3 class="panel-title"><i class="fa fa-tasks"></i>Evénements</h3>
+									<h3 class="panel-title"><i class="fa fa-tasks"></i>Infos</h3>
 								</div>
 								<div class="panel-body">
 
-									
+
 								</div>
 							</div>
 
@@ -389,11 +419,15 @@ class="sky-form"
 							<!-- End Grey Panel with Equal Height -->
 
 
+
+
 </div><!--end col 2 big----->
 
 
 
 </div><!--end row big----->
+
+
 
 
 
@@ -437,7 +471,7 @@ $("#file").change(function(){
 
 
 $( "#date_id" ).datepicker({
-                
+
                 closeText: 'Fermer',
                 prevText: 'Précédent',
                 nextText: 'Suivant',
@@ -448,11 +482,11 @@ $( "#date_id" ).datepicker({
                 dayNamesMin: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
                 weekHeader: 'Sem.',
                 dateFormat: 'dd/mm/yy'
-               
+
             });
 
 $( "#date_event_id" ).datepicker({
-                
+
                 closeText: 'Fermer',
                 prevText: 'Précédent',
                 nextText: 'Suivant',
@@ -463,8 +497,10 @@ $( "#date_event_id" ).datepicker({
                 dayNamesMin: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
                 weekHeader: 'Sem.',
                 dateFormat: 'dd/mm/yy'
-               
+
             });
+
+
 
 </script>
 
