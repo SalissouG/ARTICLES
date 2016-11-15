@@ -1,0 +1,99 @@
+
+<html lang="en" hola_ext_inject="disabled"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title></title>
+    <meta charset="utf-8">
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="files/font-awesome.min.css">
+    <link href="style.css" rel ="stylesheet"/>
+    <link rel="stylesheet" href="files/bootstrap.min.css">
+<body  style="
+background: #DCDCDC
+
+; ">
+
+<!--img style="margin-left: 350px" src="images/logo.png" /background-image:linear-gradient(#F6AD1A, white);-->
+<div class="header">
+
+    <img style="height:100%" src="images/logo.png" />
+
+
+</div>
+
+<div class="nav">
+  <ul id="menu-demo2">
+  	<li><a href="#">Lien menu 1</a>
+  		<ul>
+  			<li><a href="#">lien sous menu 1</a></li>
+  			<li><a href="#">lien sous menu 1</a></li>
+  			<li><a href="#">lien sous menu 1</a></li>
+  			<li><a href="#">lien sous menu 1</a></li>
+  		</ul>
+  	</li>
+  	<li><a href="#">Lien menu 2</a>
+  		<ul>
+  			<li><a href="#">Lien sous menu 2</a></li>
+  			<li><a href="#">Lien sous menu 2</a></li>
+  			<li><a href="#">Lien sous menu 2</a></li>
+  			<li><a href="#">Lien sous menu 2</a></li>
+  		</ul>
+  	</li>
+  	<li><a href="#">Lien menu 3</a>
+  		<ul>
+  			<li><a href="#">lien sous menu 3</a></li>
+  			<li><a href="#">lien sous menu 3</a></li>
+  			<li><a href="#">lien sous menu 3</a></li>
+  			<li><a href="#">lien sous menu 3</a></li>
+  		</ul>
+  	</li>
+  	<li><a href="#">Lien menu 4</a>
+  		<ul>
+  			<li><a href="#">Lien sous menu 4</a></li>
+  			<li><a href="#">Lien sous menu 4</a></li>
+  			<li><a href="#">Lien sous menu 4</a></li>
+  			<li><a href="#">Lien sous menu 4</a></li>
+  		</ul>
+  	</li>
+    <li><a href="#">Lien menu 5</a>
+  		<ul>
+  			<li><a href="#">Lien sous menu 5</a></li>
+  			<li><a href="#">Lien sous menu 5</a></li>
+  			<li><a href="#">Lien sous menu 5</a></li>
+  			<li><a href="#">Lien sous menu 5</a></li>
+  		</ul>
+  	</li>
+  </ul>
+
+</div>
+
+
+
+
+
+  <form class="push_form">
+
+
+
+
+</form>
+
+
+
+
+</body>
+
+<script>
+$(window).scroll(function (event) {
+    // A chaque fois que l'utilisateur va scroller (descendre la page)
+    var y = $(this).scrollTop(); // On récupérer la valeur du scroll vertical
+
+    //si cette valeur > à 200 on ajouter la class
+    if (y >= 100) {
+      $('.nav').addClass('fixed');
+    } else {
+      // sinon, on l'enlève
+      $('.nav').removeClass('fixed');
+    }
+  });
+</script>
+
+  </html>
