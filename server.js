@@ -6,7 +6,7 @@ var crypto=require('crypto');
 var fs=require('fs');
 var mime=require('mime');
 var path=require('path');
-var MapImage= require('./mapImage.js').MapImage;
+//var MapImage= require('./mapImage.js').MapImage;
 //var Evenement= require('./evenement.js').Evenement;
 
 
@@ -46,6 +46,17 @@ app.use(function(req, res, next) {
 app.use(express.static(path.join(__dirname, 'public')));
 
 
+
+app.get('/aprr-nav',function(req,res){
+      res.render("home-nav.ejs");
+});
+
+app.get('/aprr',function(req,res){
+      res.render("home.ejs");
+});
+
+
+
 app.get('/up',function(req,res){
       res.render("up.ejs");
 });
@@ -77,7 +88,7 @@ res.render("page.ejs",{images:mapImages});
 
 app.get('/',function(req,res){
 
-  MapImage.find({},function(err ,mapImages){
+/*  MapImage.find({},function(err ,mapImages){
   if(err)
   {
     console.log(err);
@@ -91,15 +102,17 @@ app.get('/',function(req,res){
                     }
                     else
                         {*/
-                            res.render("accueil.ejs",{images:mapImages});
+                          //  res.render("accueil.ejs",{images:mapImages});
                         /* }
 
                    });*/
 
 
 
-      }
-   });
+    //  }
+  // });
+
+  res.render("accueil.ejs");
 
 });
 

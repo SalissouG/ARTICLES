@@ -30,7 +30,7 @@
 
  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 
 
     <!--[if lt IE 9]><link rel="stylesheet" href="assets/plugins/sky-forms-pro/skyforms/css/sky-forms-ie8.css"><![endif]-->
@@ -113,29 +113,6 @@
 
 
 
-<table style="width:40%" >
-
-<% for(var i=images.length-1; i!=0 ; i--) {%>
-
- <h2 style=" color: black "> <%= images[i].titre %></a></h2>
-
- <p style=" color: black">Le <%= images[i].date %> à <%= images[i].heure%>h <%= images[i].minute%></a></p>
-
-<TR > <img src="http://127.0.0.1:3005/uploads/<%= images[i].name %>" style="width:99% ; text-align: center" > </TR>
-
-
-              <%= images[i].message%> </br>
-
-              <%= images[i].auteur %>
-
-
-
-
-<!--a style="margin-left:25%" href="/suppression/<%= images[0]._id %>" class="button cross"> </a--->
-
-
-<% } %>
-</table>
 
 								</div>
 <div class="tab-pane fade in " id="quiSommesNous">
