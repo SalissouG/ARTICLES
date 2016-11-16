@@ -5,7 +5,18 @@
     width:750px;
     margin: 0 auto;
 }
+.nav{
+    background:#fff;
+    height:40px;
+    width:750px;
+    margin: 0 auto;
 
+}
+.nav.fixed{
+  position:fixed;
+  top:0;
+  z-index:1000;
+}
 .footer {
     height:150px;
     background:white;
@@ -160,21 +171,6 @@ text-transform:inherit;
 color:#000;
 }
 
-.nav{
-    background:#fff;
-    height:40px;
-    width:750px;
-    margin: 0 auto;
-
-}
-
-
-
-.nav.fixed{
-  position:fixed;
-  top:0;
-  z-index:1000;
-}
 
 #menu {
   position: fixed;
