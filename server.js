@@ -51,6 +51,10 @@ app.get('/aprr-nav',function(req,res){
       res.render("home-nav.ejs");
 });
 
+app.get('/ffa',function(req,res){
+      res.render("accueil.ejs");
+});
+
 app.get('/aprr',function(req,res){
       res.render("home.ejs");
 });
