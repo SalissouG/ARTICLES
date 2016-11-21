@@ -48,7 +48,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.get('/aprr-nav',function(req,res){
-      res.render("home-nav.ejs");
+      res.render("home-nav1.ejs");
 });
 
 app.get('/ffa',function(req,res){

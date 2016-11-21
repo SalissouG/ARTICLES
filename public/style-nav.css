@@ -6,16 +6,16 @@
     height:30px;
     background:white;
 
-    width:900px;
+    width:1050px;
     background-image:-webkit-linear-gradient(top, #6495ED 0%, white 100%);
     background-image:linear-gradient(to bottom, #6495ED 0%, white 100%);
     margin: 0 auto;
  }
 .header {
-   height:100px;
+   height:110px;
     background:white;
 
-    width:900px;
+    width:1050px;
     margin: 0 auto;
 }
 .second
@@ -23,7 +23,7 @@
    height:30px;
    background:white;
      border-bottom:1px solid white;
-   width:900px;
+   width:1050px;
    background-image:-webkit-linear-gradient(top, white 0%, #6495ED 100%);
    background-image:linear-gradient(to bottom, white 0%, #6495ED 100%);
    margin: 0 auto;
@@ -32,7 +32,7 @@
 .nav{
     background:#fff;
     height:40px;
-    width:900px;
+    width:1050px;
     margin: 0 auto;
     text-align: left;
 
@@ -46,13 +46,13 @@
 .footer {
     height:200px;
     background:white;
-    width:900px;
+    width:1050px;
     margin:0 auto;
     border-top: 2px solid #6495ED;
 }
 
 .main{
-        width:900px;
+        width:1050px;
        height: 400px;
         margin:0 auto;
         background:#fff;
