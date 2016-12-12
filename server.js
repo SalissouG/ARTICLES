@@ -24,7 +24,7 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage });
 
 var app=express();
-var port=3006;
+var port=3005;
 
 
 app.use(bodyParser.json());
