@@ -6,9 +6,7 @@ var crypto=require('crypto');
 var fs=require('fs');
 var mime=require('mime');
 var path=require('path');
-//var MapImage= require('./mapImage.js').MapImage;
-//var Evenement= require('./evenement.js').Evenement;
-
+var MapImage= require('./mapImage.js').MapImage;
 
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -24,7 +22,7 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage });
 
 var app=express();
-var port=3005;
+var port=4000;
 
 
 app.use(bodyParser.json());
@@ -45,34 +43,18 @@ app.use(function(req, res, next) {
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-
-
-app.get('/aprr-nav',function(req,res){
-      res.render("home-nav1.ejs");
-});
-
-app.get('/ffa',function(req,res){
-      res.render("accueil.ejs");
-});
-
 app.get('/aprr',function(req,res){
       res.render("home.ejs");
 });
-
-
 
 app.get('/up',function(req,res){
       res.render("up.ejs");
 });
 
-
 app.get('/download', function(req, res){
   var file = __dirname + '/upload-folder/dramaticpenguin.MOV';
-  res.download(file); // Set disposition and send it.
+  res.download(file);
 });
-
-
-
 
 app.get('/im',function(req,res){
 
@@ -92,32 +74,15 @@ res.render("page.ejs",{images:mapImages});
 
 app.get('/',function(req,res){
 
-/*  MapImage.find({},function(err ,mapImages){
+  MapImage.find({},function(err ,mapImages){
   if(err)
   {
     console.log(err);
   }
   else{
-
-            /*   Evenement.find({},function(err ,evenements){
-                    if(err)
-                    {
-                           console.log(err);
-                    }
-                    else
-                        {*/
-                          //  res.render("accueil.ejs",{images:mapImages});
-                        /* }
-
-                   });*/
-
-
-
-    //  }
-  // });
-
-  res.render("accueil.ejs");
-
+     res.render("accueil.ejs",{images:mapImages});
+      }
+  });
 });
 
 app.get('/suppression/:id',function(req,res){
@@ -128,7 +93,6 @@ if(err)
 console.log(err);
 }
 else{
-
 console.log(mapImages);
 }
 });
@@ -142,12 +106,7 @@ else{
 res.render("admin.ejs",{images: mapImages});
 }
 });
-
-
-
-
 });
-
 
 app.get('/hellobdd',function(req,res){
 MapImage.find({},function(err ,mapImages){
@@ -176,11 +135,6 @@ res.send(mapImages);
 
 });
 
-
-
-
-
-
 app.get('/id',function(req,res){
 
 MapImage.find({},function(err ,mapImages){
@@ -195,11 +149,6 @@ res.send(mapImages);
 }).limit(30);
 
 });
-
-
-
-
-
 app.post('/upload',upload.single('file'),function(req,res){
 
 var message = req.body.message;

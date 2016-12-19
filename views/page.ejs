@@ -3,20 +3,18 @@
 <script type="text/javascript">
       function RedirectionJavascript(){
         document.location.href="http://0.0.0.0:3000/";
-        
+
       }
 </script>
     <title>List of pictures</title>
     <link rel="stylesheet" href="bower_components/bootstrap-css/css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
-    <link href="/style.css" rel ="stylesheet"/> 
     <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
  </head>
 
-
 <body style="background:#F5DEB3 overflow-x:hidden;overflow-y:visible;height:500px;"  ng-controller="MainCtrl"  >
 
-<div class="row" style="background:white">
+<div class="row" >
 <div class="col-lg-1"></div>
 <div class="col-lg-1" style="color:black"><h3>ARTICLES</h3></div>
 <div class="col-lg-6"></div>
@@ -36,13 +34,8 @@
         <p><%= images[1].message%></p>
         </span>
     </div>
- 
-
     </td>
-
-
-
-    <td > 
+    <td >
 
           <div id="mainwrapper" >
     <div id="box-1" class="box">
@@ -52,21 +45,17 @@
         </span>
     </div>
       </td>
+       <td >
 
-       <td > 
-
-            <div id="mainwrapper" >
+    <div id="mainwrapper" >
     <div id="box-1" class="box">
         <img id="image-1" src="http://0.0.0.0:3005/uploads/<%= images[2].name %> " >
         <span class="caption simple-caption">
         <p><%= images[2].message%></p>
         </span>
     </div>
-         </td>
-
+   </td>
    </tr>
-
-
 </table>
 
  </body>
